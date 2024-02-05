@@ -56,7 +56,7 @@ func main() {
 
 	// Creates VM using helper functions
 	create()
-	// Wait 5 minute before deleting
+	// Wait 1 minute before deleting
 	fmt.Println("Start 5 minute timer")
 	time.Sleep(5*time.Minute)
 	// Delete VM using helper functions
@@ -325,17 +325,17 @@ func createNetworkSecurityGroup(ctx context.Context) (*armnetwork.SecurityGroup,
 		Location: to.Ptr(location),
 		Properties: &armnetwork.SecurityGroupPropertiesFormat{
 			SecurityRules: []*armnetwork.SecurityRule{
-				{ // Define an inbound security rule for SSH (port 2).
+				{ // Define an inbound security rule for SSH (port 22).
 					Name: to.Ptr("demo_inbound_22"),  // Set the name for the inbound rule.
 					Properties: &armnetwork.SecurityRulePropertiesFormat{
 						SourceAddressPrefix:      to.Ptr("0.0.0.0/0"),  // Allow traffic from any source.
 						SourcePortRange:          to.Ptr("*"),         // Allow traffic from any source port.
 						DestinationAddressPrefix: to.Ptr("0.0.0.0/0"), // Allow traffic to any destination.
-						DestinationPortRange:     to.Ptr("18"),        // Allow traffic to port 18 (SSH).
+						DestinationPortRange:     to.Ptr("2"),        // Allow traffic to port 22 (SSH).
 						Protocol:                 to.Ptr(armnetwork.SecurityRuleProtocolTCP), // Set the protocol to TCP.
 						Access:                   to.Ptr(armnetwork.SecurityRuleAccessAllow), // Allow the traffic.
 						Priority:                 to.Ptr[int32](100), // Set the priority for rule evaluation.
-						Description:              to.Ptr("sample network security group inbound port 18"), // Set a description for the rule.
+						Description:              to.Ptr("sample network security group inbound port 22"), // Set a description for the rule.
 						Direction:                to.Ptr(armnetwork.SecurityRuleDirectionInbound), // Set the direction to inbound.
 					},
 		
