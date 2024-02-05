@@ -60,7 +60,7 @@ func main() {
 	time.Sleep(2*time.Minute)
 	// Delete VM using helper functions
 	destroy()
-	log.Println("Virtual Machine deleted successfully")
+	log.Println("Windows Virtual Machine deleted successfully")
 }
 
 func create() {
@@ -132,7 +132,7 @@ func create() {
 	if err := createVirtualMachine(ctx, *networkInterfaceID); err != nil {
 		log.Fatalf("Can't create Virtual Machine:%+v", err)
 	}
-	log.Println("Virtual machine created successfully")
+	log.Println("Windows Virtual machine created successfully")
 }
 
 func destroy() {
