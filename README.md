@@ -5,9 +5,9 @@ Steps to run this script
 1. Set your azure subscription ID variable so the code runs. You can do this by running **export AZURE_SUBSCRIPTION_ID="xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"**
 
 If running the windows script(windows.go):
-1. To be able to SSH into the vm, we must enable it. To deploy the ssh extension into your windows vm, run **az vm extension set --resource-group demo-group --vm-name demo-vm --name WindowsOpenSSH --publisher Microsoft.Azure.OpenSSH --version 3.0**
-2. Next, we must ensure that the TCP port is open to allow connectivity. Run **az vm extension set --resource-group demo-group --vm-name demo-vm --name WindowsOpenSSH --publisher Microsoft.Azure.OpenSSH --version 3.0**
-3. Run **go run windows.go** to run the script.
+1. Run **go run windows.go** to run the script.
+2. To be able to SSH into the vm, we must enable it. To deploy the ssh extension into your windows vm, run **az vm extension set --resource-group demo-group --vm-name demo-vm --name WindowsOpenSSH --publisher Microsoft.Azure.OpenSSH --version 3.0**
+3. Next, we must ensure that the TCP port is open to allow connectivity. Run **az vm extension set --resource-group demo-group --vm-name demo-vm --name WindowsOpenSSH --publisher Microsoft.Azure.OpenSSH --version 3.0**
 4. Run **az ssh vm -g demo-group -n demo-vm --local-user demo-user** to ssh into your vm
 
 If running the linux script(linux.go):
