@@ -56,7 +56,7 @@ func main() {
 
 	// Creates VM using helper functions
 	create()
-	// Wait 1 minute before deleting
+	// Wait 5 minute before deleting
 	fmt.Println("Start 5 minute timer")
 	time.Sleep(5*time.Minute)
 	// Delete VM using helper functions
