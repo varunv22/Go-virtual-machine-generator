@@ -56,9 +56,9 @@ func main() {
 
 	// Creates VM using helper functions
 	create()
-	// Wait 1 minute before deleting
-	fmt.Println("Start 2 minute timer")
-	time.Sleep(2*time.Minute)
+	// Wait 5 minute before deleting
+	fmt.Println("Start 5 minute timer")
+	time.Sleep(5*time.Minute)
 	// Delete VM using helper functions
 	destroy()
 	log.Println("Linux Virtual Machine deleted successfully")
