@@ -331,7 +331,7 @@ func createNetworkSecurityGroup(ctx context.Context) (*armnetwork.SecurityGroup,
 						SourceAddressPrefix:      to.Ptr("0.0.0.0/0"),  // Allow traffic from any source.
 						SourcePortRange:          to.Ptr("*"),         // Allow traffic from any source port.
 						DestinationAddressPrefix: to.Ptr("0.0.0.0/0"), // Allow traffic to any destination.
-						DestinationPortRange:     to.Ptr("2"),        // Allow traffic to port 22 (SSH).
+						DestinationPortRange:     to.Ptr("22"),        // Allow traffic to port 22 (SSH).
 						Protocol:                 to.Ptr(armnetwork.SecurityRuleProtocolTCP), // Set the protocol to TCP.
 						Access:                   to.Ptr(armnetwork.SecurityRuleAccessAllow), // Allow the traffic.
 						Priority:                 to.Ptr[int32](100), // Set the priority for rule evaluation.
